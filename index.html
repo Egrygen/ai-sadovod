@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Садовод | EgryLuck</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-navigation">
+    <div class="nav-container">
+        <div class="site-logo">
+            <a href="https://egryluck.ru/">EgryLuck</a>
+        </div>
+        <nav class="nav-menu">
+            <a href="https://egryluck.ru/">Главная</a>
+            <a href="https://egryluck.ru/yumor/">Юмор</a>
+
+            <div class="dropdown">
+                <button class="dropdown-btn" type="button">Нейросети ?</button>
+                <div class="dropdown-content">
+                    <a href="https://egryluck.ru/top-20-nejrosetej/">Топ 20 нейросетей</a>
+                    <a href="https://egryluck.ru/analiz-cza/">Анализ ЦА</a>
+                    <a href="https://egryluck.ru/nastrojka-chat-gpt/">Настройка Chat GPT</a>
+                </div>
+            </div>
+
+            <a href="https://egryluck.ru/kontakty/">Контакты</a>
+
+            <div class="dropdown">
+                <button class="dropdown-btn" type="button">Мои AI-сервисы ?</button>
+                <div class="dropdown-content dropdown-right">
+                    <a href="https://egryluck.ru/Law_RF/">Юридический ИИ</a>
+                    <a href="https://egryluck.ru/tutor/">AI-Репетитор</a>
+                    <a href="https://egryluck.ru/content-planner/">AI-Планировщик</a>
+                    <a class="active-item" href="https://egryluck.ru/gardener/">AI-Садовод</a>
+                    <a href="https://egryluck.ru/gardener/calc.html">Калькулятор калорий</a>
+                    <a href="https://egryluck.ru/doc-analyzer/">AI-Анализатор документов</a>
+                    <a href="https://egryluck.ru/AI-Rezume/">AI-Резюме</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="app-container">
+    <section class="app-header">
+        <div class="logo-icon">?</div>
+        <h1>AI-Садовод</h1>
+        <p class="subtitle">
+            Загрузите фотографию растения — ИИ попробует определить растение,
+            проблему и подскажет, что делать.
+        </p>
+    </section>
+
+    <section id="drop-zone" class="upload-section" tabindex="0" aria-label="Загрузка фотографии">
+        <input id="file-input" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+
+        <div id="upload-prompt" class="upload-placeholder">
+            <div class="icon-cloud">?</div>
+            <div class="upload-text">
+                Перетащите фотографию сюда или
+                <span id="upload-link">загрузите её</span>
+            </div>
+            <div class="upload-hint">JPG, PNG или WEBP</div>
+        </div>
+
+        <div id="preview-container" class="preview-container" hidden>
+            <img id="image-preview" alt="Предварительный просмотр фотографии">
+            <button id="btn-reset" class="btn-reset" type="button" aria-label="Удалить фотографию">x</button>
+        </div>
+    </section>
+
+    <button id="btn-analyze" class="btn-analyze" type="button" disabled>
+        <span id="btn-loader" class="loader" hidden></span>
+        <span id="btn-text">Определить проблему</span>
+    </button>
+
+    <section id="result-section" class="result-section" hidden>
+        <div class="result-card">
+            <div class="result-header">
+                <span class="badge">Анализ ИИ завершён</span>
+            </div>
+
+            <div class="result-body">
+                <div class="result-item">
+                    <h3>Название растения:</h3>
+                    <p id="plant-name" class="highlight-text">—</p>
+                </div>
+
+                <div class="result-item">
+                    <h3>Проблема / болезнь:</h3>
+                    <p id="plant-disease" class="danger-text">—</p>
+                </div>
+
+                <div class="result-item">
+                    <h3>Что делать прямо сейчас:</h3>
+                    <p id="plant-action" class="info-text">—</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="status-message" class="status-message" role="status" aria-live="polite" hidden></div>
+
+    <footer class="app-footer">
+        <p>
+            Совет: делайте снимок при хорошем освещении, фокусируясь на проблемных
+            листьях, стебле или плодах.
+        </p>
+    </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
