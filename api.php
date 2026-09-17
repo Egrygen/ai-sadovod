@@ -89,7 +89,7 @@ $prompt = <<<'PROMPT'
 PROMPT;
 
 $groqPayload = [
-    'model' => 'qwen/qwen3.6-27b',
+    'model' => 'qwen/qwen3.8-27b',
     'messages' => [
         [
             'role' => 'user',
