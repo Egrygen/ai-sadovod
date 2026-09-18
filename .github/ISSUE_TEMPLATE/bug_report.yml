@@ -1,0 +1,45 @@
+name: Сообщение об ошибке
+description: Сообщить об ошибке в работе AI-Садовода
+title: "[Ошибка]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за сообщение об ошибке.
+        Пожалуйста, опишите проблему как можно подробнее.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Что произошло?
+      description: Опишите, что произошло при использовании приложения.
+      placeholder: Например, анализ фотографии завершился ошибкой...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Что должно было произойти?
+      description: Опишите ожидаемый результат.
+      placeholder: Например, приложение должно было показать результат анализа...
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Браузер
+      description: Укажите браузер, в котором возникла проблема.
+      placeholder: Например, Chrome 150
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Скриншот или дополнительная информация
+      description: При необходимости добавьте скриншот или другие подробности.
+    validations:
+      required: false
