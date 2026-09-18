@@ -1,0 +1,36 @@
+name: Предложение улучшения
+description: Предложить новую возможность или улучшение AI-Садовода
+title: "[Предложение]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за предложение.
+        Опишите, какую возможность или улучшение вы хотели бы видеть в AI-Садоводе.
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: Что вы предлагаете?
+      description: Опишите вашу идею или предложение.
+      placeholder: Например, добавить возможность...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Зачем это нужно?
+      description: Расскажите, какую проблему решит это улучшение или чем оно будет полезно.
+      placeholder: Это поможет пользователю...
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Дополнительная информация
+      description: При необходимости добавьте примеры, ссылки или другие подробности.
+    validations:
+      required: false
